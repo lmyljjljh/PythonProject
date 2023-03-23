@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a>{{username}}</a>
+<hr>
+ 我的年龄是{{ age }}
+<hr>
+我的朋友是{{ firends }}
+我最要好的朋友是{{ firends.2 }}
+<hr>
+<ul>
+{% for i in firends %}
+    <li>{{ forloop.counter }}{{ i }}</li>
+{% endfor %}
+</ul>
+<hr>
+{% if age > 10 %}
+    大于10岁
+{% else %}
+    小于等于10岁
+{% endif %}
+<hr>
+我第一年的月薪是{{ money.2020 }}
+
+{# 注释 #}
+{% comment %}
+我也是注释
+{% endcomment %}
+<hr>
+{# 过滤器的语法形式： 变量|过滤器：参数 #}
+我的生日是{{ birthday|date:'Y 年 m 月 d日' }}
+<hr>
+我的简介是{{ desc|safe }}
+<hr>
+我没有定义的变量{{ asc|default:'默认值' }}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{# 把继承的模板写在最上面 #}
+{% extends 'base.html' %}
+
+{# 需要改哪里，直接实现block #}
+{% block title %}
+    详情页面
+{% endblock %}
+
+{% block main %}
+    <a href="#">我我我我</a>
+{% endblock main %}
+
+{# 不需要某个block直接重写 #}
+{% block footer %}
+
+{% endblock %}
