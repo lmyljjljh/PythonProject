@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <span>{{ message }}</span>
+    <hr>
+    <a href="#" v-if="isLogin">欢迎回来</a>
+    <hr>
+    <a href="#" v-if="level === 1">青铜</a>
+    <a href="#" v-else-if="level === 2">白银</a>
+    <a href="#" v-else>王者</a>
+
+
+    <hr>
+    <span v-if="seen">v-if</span>
+    <span v-show="seen">v-show</span>
+
+</div>
+<div id="app-4">
+  <ul>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ul>
+</div>
+
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data:{
+            message: 'Hello vue!',
+            isLogin:true,
+            level:3,
+            seen:true,
+
+        }
+    })
+    var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: '学习 JavaScript' },
+      { text: '学习 Vue' },
+      { text: '整个牛项目' }
+    ]
+  }
+})
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<div id="app-6">
+  <p>{{ message }}</p>
+  <input v-model="message">
+    <table>
+        <tr><td>用户名</td> <td><input type="text" name="username" v-model="username"> </td></tr>
+        <tr><td>密码</td> <td><input type="password" name="password1" v-model="password1"> </td></tr>
+        <tr><td>确认密码</td> <td><input type="password" name="password2" v-model="password2"> </td></tr>
+        <tr><td>性别</td>
+            <td>
+                男<input type="radio" name="sex" value="boy" v-model="sex">
+                女<input type="radio" name="sex" value="girl" v-model="sex">
+            </td>
+        </tr>
+        <tr><td>爱好</td>
+            <td>
+                篮球<input type="checkbox" name="like" value="篮球" v-model="like">
+                足球<input type="checkbox" name="like" value="足球" v-model="like">
+                乒乓球<input type="checkbox" name="like" value="乒乓球" v-model="like">
+            </td>
+        </tr>
+    </table>
+    <button v-on:click="register">注册</button>
+</div>
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data:{
+            message: 'Hello vue!'
+        }
+    })
+    var app6 = new Vue({
+  el: '#app-6',
+  data: {
+      message: 'Hello Vue!',
+      username:'',
+      password1:'',
+      password2: '',
+      sex:'',
+      like: [],
+
+
+  },
+  methods:{
+      register:function () {
+          alert(this.username+this.password1+this.sex+this.like)
+      }
+  }
+})
+</script>
+</html>

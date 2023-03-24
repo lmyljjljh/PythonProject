@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <a href="#">{{ message }}</a>
+    {{ message }}
+    <hr>
+    <a v-bind:href="url">点我</a>
+    <hr>
+    <span :title="shoemessage">鼠标放在这里</span>
+</div>
+
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            message: '点我',
+            url: 'https://www.itcast.cn',
+            shoemessage: '当前时间是' + new Date().toLocaleString(),
+
+        }
+    })
+</script>
+</html>

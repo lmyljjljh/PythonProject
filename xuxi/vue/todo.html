@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" name="todoit" v-model="newys"> <button @click="add">添加</button>
+    <hr>
+    <ur>
+        <li v-for="(i,index) in lista">
+         <a href="javascript:;" @click="up(index)">↑</a>   {{ i }} <a href="javascript:;" @click="deleteys(index)">删除</a> <a href="javascript:;" @click="down(index)">↓</a>
+        </li>
+    </ur>
+
+</div>
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data:{
+            message: 'Hello vue!',
+            lista:['html', 'python', 'mysql'],
+            newys:'',
+        },
+        methods:{
+            add:function () {
+                this.lista.push(this.newys);
+                this.newys='';
+            },
+            deleteys:function (index) {
+                this.lista.splice(index, 1);
+            },
+            up:function (index) {
+                <!--# 首先获取该元素然后删除该元素最后再插入该元素-->
+                current = this.lista[index];
+                this.lista.splice(index, 1);
+                this.lista.splice(index-1, 0, current);
+            },
+            down:function (index) {
+                <!--# 首先获取该元素然后删除该元素最后再插入该元素-->
+                current = this.lista[index];
+                this.lista.splice(index, 1);
+                this.lista.splice(index+1, 0, current);
+            }
+        }
+    })
+</script>
+</html>

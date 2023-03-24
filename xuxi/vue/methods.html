@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">反转消息</button>
+    <a href="javascript:;" @click="register">注册</a>
+    <button @click="add(counter)">点击加一</button>
+</div>
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data:{
+            message: 'Hello vue!'
+        }
+    })
+        var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!',
+      counter:1,
+      total:0,
+
+
+  },
+  methods: {
+    reverseMessage: function () {
+        this.message = this.message.split('').reverse().join('')
+        alert('我被点击了')
+    },
+    register: function () {
+
+        alert('注册')
+    },
+      add: function (num) {
+          this.total += num;
+          alert(this.total)
+      }
+  }
+})
+</script>
+</html>
