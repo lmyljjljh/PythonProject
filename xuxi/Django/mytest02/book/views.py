@@ -287,6 +287,5 @@ class HomeView(View):
 
 class ZY(View):
     def get(self, request):
-
         return render(request, 'detail.html')
 
