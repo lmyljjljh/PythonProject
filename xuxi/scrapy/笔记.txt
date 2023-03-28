@@ -1,0 +1,48 @@
+scrapy各模块的功能
+    Scrapy Engine（引擎）
+        总指挥：负责数据和信号的在不同模块间的传递
+            scrapy已实现
+    Scheduler（调度器）
+        一个队列，存放引擎发过来的request请求
+            scrapy已实现
+    Downloader（下载器）
+        下载把引擎发过来的requests请求，并返回给引擎
+            scrapy已实现
+    Spider（爬虫）
+        处理引擎发来的response，提取数据，提取url，并交给引擎
+            需要手写
+    Item Pipeline（管道）
+        处理引擎传过来的数据，比如存储
+            需要手写
+    Downloader Middlewares（下载中间件）
+        可以自定义的下载扩展，比如设置代理
+            一般不用手写
+    Spider MiddlewaresSpider
+        可以自定义requests请求和进行response过滤
+            一般不用手写
+
+scrapy 入门使用
+    安装
+        命令 pip install scrapy
+    项目开发流程
+        创建项目
+            scrapy startproject mySpider
+                如果出现 ImportError: cannot import name 'ParamSpec' from 'typing_extensions' (d:\anaconda\lib\site-packages\typing_extensions.py)报错解决方式如下：
+                    pip install typing-extensions==4.3.0 -i https://pypi.tuna.tsinghua.edu.cn/simple（前提你没有安装typing-extensions，否则需要先卸载pip uninstall typing-extensions）
+            各个文件的作用
+                setting                 设置
+                pipelines.py            数据操作文件
+                middlewares             中间件
+
+        创建爬虫
+            scrapy genspider <爬虫名字> <允许爬的域名>
+                爬虫名字
+                    作为爬虫运行时的参数
+                允许爬的域名
+                    对于爬虫设置的爬取范围，设置之后用于过滤要爬取的url，如果爬取的url与允许的域不同则被过滤掉
+        提取数据
+            根据网站结构在spider中实现数据采集相关内容
+        保存数据
+            使用pipeline进行数据后续处理和保存
+
+
