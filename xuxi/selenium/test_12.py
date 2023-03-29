@@ -21,7 +21,6 @@ class Douyu(object):
             temp['num'] = room.find_element_by_xpath('./a/div[2]/div[2]/span').text
             print(temp)
 
-
     def run(self):
         # url
         # driver
@@ -29,7 +28,7 @@ class Douyu(object):
         self.driver.get(self.url)
         time.sleep(2)
         while True:
-            #parse
+            # parse
             self.parse_data()
             try:
                 el_next = self.driver.find_element_by_xpath('//*[@id="listAll"]/section[2]/div[2]/div/ul/li[9]/span')
