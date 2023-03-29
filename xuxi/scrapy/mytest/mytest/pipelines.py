@@ -10,4 +10,8 @@ from itemadapter import ItemAdapter
 
 class MytestPipeline:
     def process_item(self, item, spider):
+        print('itcast:', item)
+        # 默认使用完管道之后将数据返回给引擎
         return item
+
+

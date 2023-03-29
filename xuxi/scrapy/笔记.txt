@@ -52,8 +52,18 @@ scrapy 入门使用
             根据网站结构在spider中实现数据采集相关内容
         保存数据
             使用pipeline进行数据后续处理和保存
+                定义一个管道类
+                    重写管道类的process_item方法
+                        process_item方法处理完item之后必须返回给引擎
 
         运行scrapy
             在项目目录下执行scrapy crawl <爬虫名字>
+
+        完善爬虫
+            修改起始url
+            检查修改允许的域名
+            在parse方法中实现爬取逻辑
+
+
 
 
