@@ -35,3 +35,5 @@ for j in range(m):
 #         s3 += ditb[j]['name'] + ' ' + str(ditb[j]['count'])
 # with open(r'.\1\{}.out'.format(i+1), 'w') as fp:
 #     fp.write(s3)
+
+print 1
